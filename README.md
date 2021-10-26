@@ -21,22 +21,14 @@ BLX is the network backbone/blockchain that facilitates...
 ----
 ## Run it! ##
 
-  - Unix: `./run.sh`
-  - Windows: `run.bat`
+  - `./run.sh`
   - Once complete , go to  `http://localhost:2022/` in your favorite browser (Chrome, Safari, Firefox, Brave, etc...)
 
 ----
 ## Compile it! ##
 
   - if necessary, run: `./compile.sh`
-
-----
-## Troubleshooting BLX ##
-
-  - How to stop server?
-    - `./stop.sh`
-    - or if started from command line, ctrl+c
-
+  
 ----
 ## License
 
