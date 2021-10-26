@@ -15,8 +15,8 @@ BLX is the network backbone/blockchain that facilitates...
 
   - *Dependencies*:
     - *General* - Java 
-      - *Ubuntu* - `https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-20-04`
-      - *Debian* - `https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-debian-10`
+    - *Ubuntu* - `https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-ubuntu-20-04`
+    - *Debian* - `https://www.digitalocean.com/community/tutorials/how-to-install-java-with-apt-on-debian-10`
 
 ----
 ## Run it! ##
