@@ -484,8 +484,7 @@ public abstract class MonetarySystem extends TransactionType {
         void validateAttachment(Transaction transaction) throws NxtException.ValidationException {
             Attachment.MonetarySystemPublishExchangeOffer attachment = (Attachment.MonetarySystemPublishExchangeOffer) transaction.getAttachment();
             if (attachment.getBuyRateNQT() <= 0
-                    || attachment.getSellRateNQT() <= 0
-                    || attachment.getBuyRateNQT() > attachment.getSellRateNQT()) {
+                    || attachment.getSellRateNQT() <= 0) {
                 throw new NxtException.NotValidException(String.format("Invalid exchange offer, buy rate %d and sell rate %d has to be larger than 0, buy rate cannot be larger than sell rate",
                         attachment.getBuyRateNQT(), attachment.getSellRateNQT()));
             }
