@@ -20,7 +20,9 @@ public interface Fee {
 
     long getFee(TransactionImpl transaction, Appendix appendage);
 
-    Fee DEFAULT_FEE = new Fee.ConstantFee(1000000);
+    long MIN_FEE = 1000000L;
+
+    Fee DEFAULT_FEE = new Fee.ConstantFee(MIN_FEE);
 
     Fee NONE = new Fee.ConstantFee(0L);
 
