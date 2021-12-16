@@ -2370,7 +2370,7 @@ public abstract class TransactionType {
 
         public static final TransactionType LISTING = new DigitalGoods() {
 
-            private final Fee DGS_LISTING_FEE = new Fee.SizeBasedFee(2 * Fee.MIN_FEE, 2 * Fee.MIN_FEE, 32) {
+            private final Fee DGS_LISTING_FEE = new Fee.SizeBasedFee(Fee.MIN_FEE, Fee.MIN_FEE, 32) {
                 @Override
                 public int getSize(TransactionImpl transaction, Appendix appendage) {
                     Attachment.DigitalGoodsListing attachment = (Attachment.DigitalGoodsListing) transaction.getAttachment();
@@ -2737,7 +2737,7 @@ public abstract class TransactionType {
 
         public static final TransactionType DELIVERY = new DigitalGoods() {
 
-            private final Fee DGS_DELIVERY_FEE = new Fee.SizeBasedFee(Fee.MIN_FEE, 2 * Fee.MIN_FEE, 32) {
+            private final Fee DGS_DELIVERY_FEE = new Fee.SizeBasedFee(Fee.MIN_FEE, Fee.MIN_FEE, 32) {
                 @Override
                 public int getSize(TransactionImpl transaction, Appendix appendage) {
                     Attachment.DigitalGoodsDelivery attachment = (Attachment.DigitalGoodsDelivery) transaction.getAttachment();
