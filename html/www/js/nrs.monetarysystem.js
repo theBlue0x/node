@@ -266,7 +266,7 @@ var NRS = (function (NRS, $, undefined) {
                 "<td class = 'numeric'>" + NRS.formatQuantity(currency.unconfirmedUnits, currency.decimals, false, unitsDecimals) + "</td>" +
                 "<td>" +
                 //"<a href='#' class='btn btn-xs btn-default' onClick='NRS.goToCurrency(&quot;" + code + "&quot;)' " + (!NRS.isExchangeable(currency.type) ? "disabled" : "") + ">" + $.t("exchange") + "</a> " +
-                "<a href='https://market.blue0x.com' class='btn btn-xs btn-default'>" + $.t("exchange") + "</a> " +
+                "<a href='https://exchange.blue0x.com' class='btn btn-xs btn-default'>" + $.t("exchange") + "</a> " +
                 "<a href='#' class='btn btn-xs btn-default' data-toggle='modal' data-target='#transfer_currency_modal' data-currency='" + NRS.escapeRespStr(currency.currency) + "' data-code='" + code + "' data-decimals='" + decimals + "'>" + $.t("send") + "</a> " +
                 "</td>" +
                 "</tr>";
