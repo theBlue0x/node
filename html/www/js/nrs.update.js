@@ -18,17 +18,11 @@
  * @depends {nrs.js}
  */
 var NRS = (function(NRS, $) {
-	var DOWNLOAD_REPOSITORY_URL = "https://bitbucket.org/Jelurida/nxt/downloads/";
+	var DOWNLOAD_REPOSITORY_URL = "https://github.com/theBlue0x/BLX";
 	var index = 0;
 	var bundles = [
-		{alias: "nrsVersion", status: "release", prefix: "nxt-client-", ext: "zip"},
-		{alias: "nrsBetaVersion", status: "beta", prefix: "nxt-client-", ext: "zip"},
-		{alias: "nrsVersionWin", status: "release", prefix: "nxt-client-", ext: "exe"},
-		{alias: "nrsBetaVersionWin", status: "beta", prefix: "nxt-client-", ext: "exe"},
-		{alias: "nrsVersionMac", status: "release", prefix: "nxt-installer-", ext: "dmg"},
-		{alias: "nrsBetaVersionMac", status: "beta", prefix: "nxt-installer-", ext: "dmg"},
-		{alias: "nrsVersionLinux", status: "release", prefix: "nxt-client-", ext: "sh"},
-		{alias: "nrsBetaVersionLinux", status: "beta", prefix: "nxt-client-", ext: "sh"}
+		{alias: "nrsVersion", status: "release", prefix: "BLX-master-", ext: "zip"},
+		
 	];
 	NRS.isOutdated = false;
 
