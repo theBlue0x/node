@@ -1,3 +1,6 @@
+## The Blue0x Official Wallet
+
+
 ![GitHub last commit](https://img.shields.io/github/last-commit/theblue0x/BLX?color=success)  ![GitHub repo size](https://img.shields.io/github/repo-size/theblue0x/BLX?color=success)  [![Discord](https://img.shields.io/discord/823558528212008961?logo=discord)](https://discord.gg/EbBWRSPW63)
 
 
@@ -8,12 +11,6 @@
 
 ![Image description](https://i.imgur.com/IE7Zoi7.png)
 
-----
-## What is BLX? ##
-
-- A Decentralized Marketplace
-- Decentralized Global Currencies
-- A Decentralized Currency Exchange 
 ----
 ## License
 
