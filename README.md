@@ -14,4 +14,4 @@
 ----
 ## License
 
-* This program is distributed under the terms of the Jelurida Public License version 1.1 for the Ardor Public Blockchain Platform. (available in the JPL-Licensing folder of this repo)
+* This program is distributed under the terms of the Jelurida Public License version 1.1 for the NXT Public Blockchain Platform. (available in the JPL-Licensing folder of this repo)
