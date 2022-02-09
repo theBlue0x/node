@@ -234,7 +234,6 @@ var NRS = (function (NRS, $, undefined) {
             "<td>";
             //noinspection BadExpressionStatementJS
             //rows += "<a href='#' class='btn btn-xs btn-default' onClick='NRS.goToCurrency(&quot;" + code + "&quot;)' " + (!NRS.isExchangeable(currency.type) ? "disabled" : "") + ">" + $.t("exchange") + "</a> ";
-            rows += "<a href='https://exchange.blue0x.com' class='btn btn-xs btn-default'>" + $.t("exchange") + "</a> ";
             rows += "</td></tr>";
         }
         var currenciesTable = $('#currencies_table');
@@ -266,7 +265,6 @@ var NRS = (function (NRS, $, undefined) {
                 "<td class = 'numeric'>" + NRS.formatQuantity(currency.unconfirmedUnits, currency.decimals, false, unitsDecimals) + "</td>" +
                 "<td>" +
                 //"<a href='#' class='btn btn-xs btn-default' onClick='NRS.goToCurrency(&quot;" + code + "&quot;)' " + (!NRS.isExchangeable(currency.type) ? "disabled" : "") + ">" + $.t("exchange") + "</a> " +
-                "<a href='https://exchange.blue0x.com' class='btn btn-xs btn-default'>" + $.t("exchange") + "</a> " +
                 "<a href='#' class='btn btn-xs btn-default' data-toggle='modal' data-target='#transfer_currency_modal' data-currency='" + NRS.escapeRespStr(currency.currency) + "' data-code='" + code + "' data-decimals='" + decimals + "'>" + $.t("send") + "</a> " +
                 "</td>" +
                 "</tr>";
@@ -844,7 +842,7 @@ var NRS = (function (NRS, $, undefined) {
             submitButton.data("totalNQT", response.amountNQT);
             submitButton.prop('disabled', false);
         })
-   	});
+    });
 
     NRS.pages.currencies = function () {
         if (NRS.currenciesPageType == "my_currencies") {
@@ -1408,12 +1406,12 @@ var NRS = (function (NRS, $, undefined) {
     });
 
     $(".issue_currency_reservable").on("change", function() {
-   		if ($(this).is(":checked")) {
-   			$(this).closest("form").find(".optional_reserve").fadeIn();
-   		} else {
-   			$(this).closest("form").find(".optional_reserve").hide();
-   		}
-   	});
+        if ($(this).is(":checked")) {
+            $(this).closest("form").find(".optional_reserve").fadeIn();
+        } else {
+            $(this).closest("form").find(".optional_reserve").hide();
+        }
+    });
 
     $('#issue_currency_mintable').change(function () {
         if ($(this).is(":checked")) {
