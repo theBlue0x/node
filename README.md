@@ -1,4 +1,4 @@
-## The Blue0x Official Wallet
+## The Blue0x Node Repo
 
 
 ![GitHub last commit](https://img.shields.io/github/last-commit/theBlue0x/BLX?color=success)  ![GitHub repo size](https://img.shields.io/github/repo-size/theBlue0x/BLX?color=success)  [![Discord](https://img.shields.io/discord/823558528212008961?logo=discord)](https://discord.gg/EbBWRSPW63)
