@@ -842,7 +842,7 @@ var NRS = (function (NRS, $, undefined) {
             submitButton.data("totalNQT", response.amountNQT);
             submitButton.prop('disabled', false);
         })
-    });
+   	});
 
     NRS.pages.currencies = function () {
         if (NRS.currenciesPageType == "my_currencies") {
@@ -1406,12 +1406,12 @@ var NRS = (function (NRS, $, undefined) {
     });
 
     $(".issue_currency_reservable").on("change", function() {
-        if ($(this).is(":checked")) {
-            $(this).closest("form").find(".optional_reserve").fadeIn();
-        } else {
-            $(this).closest("form").find(".optional_reserve").hide();
-        }
-    });
+   		if ($(this).is(":checked")) {
+   			$(this).closest("form").find(".optional_reserve").fadeIn();
+   		} else {
+   			$(this).closest("form").find(".optional_reserve").hide();
+   		}
+   	});
 
     $('#issue_currency_mintable').change(function () {
         if ($(this).is(":checked")) {

@@ -25,16 +25,13 @@
   margin-left: -10px !important;
 }
 
-/*!
- *   AdminLTE v1.0
- *   Author: AlmsaeedStudio.com
- *   License: Please visit http://wrapbootstrap.com for information about
- *            this theme's license
-!*/
-/*
-    Core: General style
-----------------------------
-*/
+.content-header {
+  margin-left: 20px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
 html,
 body {
   overflow-x:hidden;
