@@ -92,15 +92,15 @@
 	    <form role="form" id="generate_hallmark_form" autocomplete="off">
 	        <div class="form-group">
 	            <label>Host:</label>
-	            <input type="text" class="form-control" id="host" placeholder="Public Host Address" data-i18n="[placeholder]public_host_address" />
+	            <input type="text" class="form-control" id="host" placeholder="Node IP Address" autofocus tabindex="1"/>
 	        </div>
 	        <div class="form-group">
 	            <label>Date:</label>
-	            <input type="text" class="form-control" id="date" placeholder="YYYY/MM/DD" data-i18n="[placeholder]hallmark_date_placeholder" />
+	            <input type="text" class="form-control" id="date" placeholder="YYYY/MM/DD" />
 	        </div>
 	        <div class="form-group secret_phrase">
 	            <label>Passphrase:</label>
-	            <input type="password" id="secretPhrase" class="form-control" placeholder="Rewards Account Secret Phrase" autofocus tabindex="1">
+	            <input type="password" id="secretPhrase" class="form-control" placeholder="Rewards Account Secret Phrase" tabindex="2">
 	        </div>
 	    </form>
 	    <div class="modal-footer" style="margin-top:0;">
@@ -112,15 +112,6 @@
 <script src="js/3rdparty/jquery.min.js"></script>
 <script src="js/3rdparty/bootstrap.min.js"></script>
 <script src="js/3rdparty/i18next.js"></script>
-<script>
-	$.getJSON('http://localhost:2022/nxt', {
-      requestType: "getMyInfo"
-    }, 
-      function(request) {
-      var host = request.host;
-    $("#host").val(host);
-    });
-</script>
 <script>
 	const date = new Date();
 	const [withoutTime] = date.toISOString().split('T');
