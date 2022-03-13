@@ -1,0 +1,160 @@
+<!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+  ~ Copyright © 2013-2016 The Nxt Core Developers.                            ~
+  ~ Copyright © 2016-2020 Jelurida IP B.V.                                    ~
+  ~                                                                           ~
+  ~ See the LICENSE.txt file at the top-level directory of this distribution  ~
+  ~ for licensing information.                                                ~
+  ~                                                                           ~
+  ~ Unless otherwise agreed in a custom licensing agreement with Jelurida B.V.,
+  ~ no part of the Nxt software, including this file, may be copied, modified,~
+  ~ propagated, or distributed except according to the terms contained in the ~
+  ~ LICENSE.txt file.                                                         ~
+  ~                                                                           ~
+  ~ Removal or modification of this copyright notice is prohibited.           ~
+  ~                                                                           ~
+  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title data-i18n="app_title">Blue0x Wallet</title>
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=yes">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css">
+	<style>
+		body {
+			background:url(img/client_background.png);
+			background-position: center center;
+			-webkit-background-size: 100%;
+			-moz-background-size: 100%;
+			-o-background-size: 100%;
+			background-size: 100%;
+
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;
+			min-height: 100vh;
+			width: 100vw;
+			color: white;
+			padding-top: 20vh;
+		}
+		.modal-footer {
+			border-top: none;
+			margin-right: -12px;
+		}
+		<style>
+		.tooltip {
+			position: relative;
+			display: inline-block;
+		}
+
+		.tooltip .tooltiptext {
+			visibility: hidden;
+			width: 140px;
+			background-color: #555;
+			color: #fff;
+			text-align: center;
+			border-radius: 6px;
+			padding: 5px;
+			position: absolute;
+			z-index: 1;
+			bottom: 150%;
+			left: 50%;
+			margin-left: -75px;
+			opacity: 0;
+			transition: opacity 0.3s;
+		}
+
+		.tooltip .tooltiptext::after {
+			content: "";
+			position: absolute;
+			top: 100%;
+			left: 50%;
+			margin-left: -5px;
+			border-width: 5px;
+			border-style: solid;
+			border-color: #555 transparent transparent transparent;
+		}
+
+		.tooltip:hover .tooltiptext {
+			visibility: visible;
+			opacity: 1;
+		}
+	</style>
+	</style>
+</head>
+<body>
+	<div class="col-md-4 col-md-offset-4">
+		<div id="result" style="width:300px; word-wrap:break-word; display:inline-block;">
+		<h3 style="text-align: center;">REGISTER YOUR BLUE0X NODE</h3>
+		<br/>
+	    <form role="form" id="generate_hallmark_form" autocomplete="off">
+	        <div class="form-group">
+	            <label>Host:</label>
+	            <input type="text" class="form-control" id="host" placeholder="Public Host Address" data-i18n="[placeholder]public_host_address" />
+	        </div>
+	        <div class="form-group">
+	            <label>Date:</label>
+	            <input type="text" class="form-control" id="date" placeholder="YYYY/MM/DD" data-i18n="[placeholder]hallmark_date_placeholder" />
+	        </div>
+	        <div class="form-group secret_phrase">
+	            <label>Passphrase:</label>
+	            <input type="password" id="secretPhrase" class="form-control" placeholder="Rewards Account Secret Phrase" autofocus tabindex="1">
+	        </div>
+	    </form>
+	    <div class="modal-footer" style="margin-top:0;">
+	        <button type="button" class="btn btn-primary" onclick="register();">Register Node</button>
+	    </div>
+	  </div>
+	</div>
+</body>
+<script src="js/3rdparty/jquery.min.js"></script>
+<script src="js/3rdparty/bootstrap.min.js"></script>
+<script src="js/3rdparty/i18next.js"></script>
+<script>
+	$.getJSON('https://api.blue0x.com/nxt', {
+      requestType: "getMyInfo"
+    }, 
+      function(request) {
+      var host = request.host;
+    $("#host").val(host);
+    });
+</script>
+<script>
+	const date = new Date();
+	const [withoutTime] = date.toISOString().split('T');
+  $("#date").val(withoutTime);
+</script>
+<script>
+	function register(){
+	$.post('http://localhost:2022/nxt', {
+      requestType: "markHost",
+      host: $('#host').val(),
+      weight: "1",
+      date: $('#date').val(),
+      secretPhrase: $('#secretPhrase').val()
+    }, 
+      function(request) {
+      var data = JSON.parse(request);
+      var hallmark = data.hallmark;
+      var rows = " ";
+      rows += "<h3>Your Node has been submitted!</h3>";
+      rows += "<p id='text1'>nxt.myHallmark=" + hallmark + "</p>";
+      rows += "<button class='btn btn-info' id='myTooltip' onclick='copy()'>Copy to Clipboard</button>"
+    	$("#result").html(rows);
+    	});
+	}
+</script>
+<script>
+function copy() {
+  var $temp = $("<input>");
+  $("body").append($temp);
+  $temp.val($(text1).text()).select();
+  document.execCommand("copy");
+  $temp.remove();
+
+	var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Copied!";}
+</script>
+</html>
